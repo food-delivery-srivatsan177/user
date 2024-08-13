@@ -1,0 +1,11 @@
+services:
+  db:
+    image: mongo:7.0.13-rc0-jammy
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - $PWD/db:/data/db
+    ports:
+      - 27017:27017
