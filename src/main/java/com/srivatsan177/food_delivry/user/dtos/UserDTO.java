@@ -2,12 +2,13 @@ package com.srivatsan177.food_delivry.user.dtos;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@SuperBuilder
 public class UserDTO {
     private String id;
 
