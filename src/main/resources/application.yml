@@ -1,12 +1,25 @@
 spring:
   application:
     name: user
+  config:
+    import: optional:file:.env[.properties]
   data:
     mongodb:
       host: localhost
       port: 27017
-      database: user
-      username: root
-      password: example
+      database: ${MONGO_DATABASE}
+      username: ${MONGO_USERNAME}
+      password: ${MONGO_PASSWORD}
       authentication-database: admin
       auto-index-creation: true
+custom:
+  app:
+    jwt_secret: ${JWT_SECRET_KEY}
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
